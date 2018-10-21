@@ -7,6 +7,19 @@ export default StyleSheet.create({
     backgroundColor: '#fff',
   },
 
+  loading: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'white',
+    flex: 1,
+  },
+
+  load: {
+    color: '#82AABE',
+    marginBottom: 16,
+    fontSize: 22,
+  },
+
   centered: {
     justifyContent: 'center',
     alignItems: 'center',
