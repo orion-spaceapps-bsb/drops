@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, Input, Text, TextInput } from 'react-native';
+import { View, Text, TextInput } from 'react-native';
+import KeyboardSpacer from 'react-native-keyboard-spacer';
 import PropTypes from 'prop-types';
 
 import style from './style';
@@ -15,6 +16,7 @@ const Form = props => {
         onChangeText={console.log('mudou')}
         value={''}
       />
+      <KeyboardSpacer />
     </View>);
 };
 
