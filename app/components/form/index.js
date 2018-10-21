@@ -6,15 +6,14 @@ import PropTypes from 'prop-types';
 import style from './style';
 
 const Form = props => {
-  const { label } = props;
+  const { label, value } = props;
 
   return (
     <View style={style.content}>
       <Text>{label}</Text>
       <TextInput
         style={style.input}
-        onChangeText={console.log('mudou')}
-        value={''}
+        value={this.props.value}
       />
       <KeyboardSpacer />
     </View>);

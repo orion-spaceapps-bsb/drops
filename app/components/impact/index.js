@@ -11,6 +11,11 @@ const Impact = props => {
 
   const { navigate } = props.navigation;
 
+  const preventionCost = props.navigation.getParam('preventionCost', '0');
+  const reparationCost = props.navigation.getParam('reparationCost', '0');
+
+  console.log(preventionCost);
+  console.log(reparationCost);
   openReport = () => {
     navigate('Report');
   };
@@ -18,8 +23,8 @@ const Impact = props => {
   return (
     <View style={style.content}>
       <Header back={true} navigate={() => props.navigation.pop()}/>
-      <Finantial title={'Custo de sistema de prevenção:'} value={8500000} />
-      <Finantial title={'Custo da reparação dos danos:'} value={590000000} />
+      <Finantial title={'Custo de sistema de prevenção:'} value={parseInt(preventionCost)} />
+      <Finantial title={'Custo da reparação dos danos:'} value={parseInt(reparationCost)} />
       <View style={style.horizontalLine} />
       <Investiments navigate={navigate} />
       <TouchableOpacity style={[style.button, style.centered]} onPress={this.openReport}>

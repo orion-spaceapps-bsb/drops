@@ -31,7 +31,10 @@ class Boarding extends Component {
           error: null,
         });
         this.setState({ loading: false });
-        navigate('Dashboard');
+        navigate('Dashboard', {
+          latitude: this.state.latitude,
+          longitude: this.state.longitude,
+        });
       },
       (error) => this.setState({ error: error.message }),
       { enableHighAccuracy: true, timeout: 20000, maximumAge: 1000 },
