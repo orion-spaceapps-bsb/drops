@@ -22,7 +22,6 @@ class Dashboard extends Component {
   };
 
   endGet = (response) => {
-    console.log(response);
     const { navigate } = this.props.navigation;
     navigate('Impact', {
       preventionCost: response.data.preventionCost,
@@ -80,16 +79,21 @@ class Dashboard extends Component {
             />
             <KeyboardSpacer />
           </View>
-          <Picker
-            style={{ height: 50, width: '100%' }}
-            selectedValue={this.state.soilRunoff}
-            onValueChange={(itemValue) => this.setState({soilRunoff: itemValue})}>
-            <Picker.Item label="Rocha" value="70" />
-            <Picker.Item label="Argila compacta" value="60" />
-            <Picker.Item label="Terra arenosa" value="50" />
-            <Picker.Item label="Areia fina" value="40" />
-            <Picker.Item label="Cascalho" value="30" />
-          </Picker>
+          <View style={style.inputContent}>
+            <Text>Tipo de solo:</Text>
+            <Picker
+              style={{ height: 50, width: '100%', marginTop: 16 }}
+              selectedValue={this.state.soilRunoff}
+              onValueChange={(itemValue) => this.setState({soilRunoff: itemValue})}
+              itemStyle={style.picker}
+            >
+              <Picker.Item label="Rocha" value="70" />
+              <Picker.Item label="Argila compacta" value="60" />
+              <Picker.Item label="Terra arenosa" value="50" />
+              <Picker.Item label="Areia fina" value="40" />
+              <Picker.Item label="Cascalho" value="30" />
+            </Picker>
+          </View>
         </View>
         <TouchableOpacity style={[style.button, style.centered]} onPress={this.openImpact}>
           <Text style={style.buttonText}>Calcular!</Text>
